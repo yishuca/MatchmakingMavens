@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Matchmaking Maven</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/w3.css">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 1;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("../img/9fe826107812099.5faf8831d90b0.gif");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("../img/9fe826107812099.5faf8831d90b0.gif");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("../img/9fe826107812099.5faf8831d90b0.gif");
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Top Nav Bar -->
+<div class="w3-top">
+  <div class="w3-row w3-purple w3-card-4 w3-mobile">
+    <div class="w3-cell w3-mobile">
+      <a href="#about" class="w3-button w3-hide-small w3-hover-teal w3-large">ABOUT</a>
+    </div>
+    <div class="w3-cell">
+      <a href="#our team" class="w3-button w3-hide-small w3-hover-teal w3-large">blank</a>
+    </div>
+    <div class="w3-cell">
+      <a href="./PageServices.html" class="w3-button w3-hide-small w3-hover-teal w3-large">blank</a>
+    </div>
+    <div class="w3-cell">
+      <a href="./PagePortfolio.html" class="w3-button w3-hide-small w3-hover-teal w3-large">blank</a>
+    </div>
+    <div class="w3-cell">
+      <a href="#contact" class="w3-button w3-hide-small w3-hover-teal w3-large">blank</a>
+    </div>
+    <div class="w3-cell">
+      <a href="https://rapunzelsalonandspa.glossgenius.com/services" class="w3-button w3-hide-small w3-hover-teal w3-large">blank</a>
+    </div>
+  </div>
+</div>
+<!-- Top Nav Bar -->
+
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-card-4 w3-top w3-overlay w3-xlarge w3-animate-left w3-brown" style="display:none;z-index:2;width:50%;min-width:300px" id="mySidebar">
+<a href="javascript:void(0)" onclick="w3_close()" class="w3-hover-teal w3-ripple w3-right w3-xlarge w3-brown w3-button w3-hide-large" title="Close Menu">
+  <i class="fa fa-remove">x</i>
+</a>
+<div class="w3-container w3-bar-item" style="text-shadow:1px 2px 0 #000000"><b>Matchmaking Maven</b></div><br>
+<a href="#about" onclick="w3_close()" class="w3-ripple w3-hover-teal w3-bar-item w3-button">ABOUT</a><br>
+<a href="#our team" onclick="w3_close()" class="w3-ripple	 w3-hover-teal w3-bar-item w3-button">OUR TEAM</a><br>
+<a href="./PageServices.html" onclick="w3_close()" class="w3-ripple w3-hover-teal w3-bar-item w3-button">SERVICES</a><br>
+<a href="#portfolio" onclick="w3_close()" class="w3-ripple	 w3-hover-teal w3-bar-item w3-button">PORTFOLIO</a><br>
+<a href="#contact" onclick="w3_close()" class="w3-ripple	 w3-hover-teal w3-bar-item w3-button">CONTACT</a><br>
+<a href="https://rapunzelsalonandspa.glossgenius.com/services" onclick="w3_close()" class="w3-ripple w3-hover-teal w3-bar-item w3-button">BOOK</a>
+</nav>
+<!-- Sidebar (hidden by default) -->
+
+<!-- Top mini menu -->
+<div class="w3-top w3-left w3-hide-medium w3-hide-large">
+<div class="w3-xlarge" style="max-width:1200px;margin:auto">
+<div class="w3-container w3-black w3-text-white w3-xlarge w3-padding-16 w3-left pointer" onclick="w3_open()">&#9776;</div>
+</div>
+</div>
+<!-- Top mini menu -->
+
+<!-- Start Page content -->
+
+
+<header class="w3-center"> 
+  <div class="bgimg-1 w3-display-container">
+      <img class="w3-animate-top w3-display-topleft w3-margin-left" height="1000" src="../img/MatchmakingHavenLogoShadow.png" alt="MatchmakingHavenLogo">
+
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSdCcQs35RCiUbOEgUxNIPLqH7AQuVFwp3tGJV0XvaStnLhZng/formResponse">
+        <label for="entry.1718142598=Name">Can I get your name and best contact number in case we get disconnected during the call?
+        </label><br>
+        <input type="text" name="" placeholder=""/><br>
+        <label for="entry.1773706990=Numberrrrr">Can I ask you a few questions to determine if you are a fit for my service?
+        </label><br>
+        <input type="text" name="" placeholder=""/><br>
+        <label for="entry.681135389=Yes"></label><br>
+        <input type="text" name="" placeholder=""/><br>
+        <label for="entry.1805458979=What+is+your+current+location?"></label><br>
+        <input type="text" name="" placeholder=""/><br>
+        <label for="entry.1446340985=Where+did+you+grow+up?"></label><br>
+        <input type="text" name="" placeholder=""/><br>
+        <label for="entry.1485936520=What+is+your+level+of+education+and+current+occupation?"></label><br>
+        <input type="text" name="" placeholder=""/><br>
+        <label for="entry.1447810737=How+did+you+hear+about+this+matchmaking+service?"></label><br>
+        <input type="text" name="" placeholder=""/><br>
+        <label for="entry.1459907972=Is+there+anything+that+prompted+you+to+contact+a+matchmaker+right+now?"></label><br>
+        <input type="text" name="" placeholder=""/><br>
+        <label for="entry.245178840=When+did+your+last+relationship+end?"></label><br>
+        <input type="text" name="" placeholder=""/><br>
+        <label for="entry.1170363910=How+long+was+your+longest+relationship?"></label><br>
+        <input type="text" name="" placeholder=""/><br>
+        <label for="entry.1819884894=Do+you+have+any+children+or+want+children?"></label><br>
+        <input type="text" name="" placeholder=""/><br>
+        <label for="entry.1263499332=What+are+your+requirements+for+a+mate?"></label><br>
+        <input type="text" name="" placeholder=""/><br>
+        <label for="entry.327386971=10&entry.880107350=No"></label><br>
+        <input type="text" name="" placeholder=""/><br>
+        <label for="entry.294057513=Is+there+anything+preventing+you+from+getting+started+at+this+time?"></label><br>
+        <input type="text" name="" placeholder=""/><br>
+        <label for="entry.1407818448=Yes"></label><br>
+        <input type="text" name="" placeholder=""/><br>
+        <button type="submit">Submit</button><br>
+      </form>
+      
+      
+        
+          <form action="/submit" method="post">  
+              <!-- Introduction Section -->  
+              <section id="introduction">  
+                  <h1>Welcome to Our Questionnaire</h1>  
+                  <p>  
+                      Thank you for taking the time to participate in our survey. Your input is valuable to us, and it will help us gather important information for [insert purpose of the questionnaire].  
+                  </p>  
+                  <p>  
+                      Please read the instructions carefully before answering each question. Your responses are confidential, and the data collected will be used solely for [insert the purpose or goal of the survey].  
+                  </p>  
+              </section>  
+        
+              <!-- Section 1: Personal Information -->  
+              <section id="personalInfo">  
+                  <h2>Personal Information</h2>  
+                  <label for="fullName">Full Name:</label>  
+                  <input type="text" id="fullName" name="fullName" required>  
+        
+                  <label for="email">Email:</label>  
+                  <input type="email" id="email" name="email" required>  
+              </section>  
+        
+              <!-- Section 2: Rating Scale -->  
+              <section id="ratingScale">  
+                  <h2>Rating Scale</h2>  
+                  <p>On a scale of 1 to 5, how satisfied are you with our services?</p>  
+                  <input type="radio" id="rating1" name="satisfaction" value="1">  
+                  <label for="rating1">1 - Not Satisfied</label>  
+        
+                  <input type="radio" id="rating2" name="satisfaction" value="2">  
+                  <label for="rating2">2</label>  
+        
+                  <input type="radio" id="rating3" name="satisfaction" value="3">  
+                  <label for="rating3">3 - Neutral</label>  
+        
+                  <input type="radio" id="rating4" name="satisfaction" value="4">  
+                  <label for="rating4">4</label>  
+        
+                  <input type="radio" id="rating5" name="satisfaction" value="5">  
+                  <label for="rating5">5 - Very Satisfied</label>  
+              </section>  
+        
+              <!-- Section 3: Open-Ended Question -->  
+              <section id="openEnded">  
+                  <h2>Open-Ended Question</h2>  
+                  <p>Please provide any additional comments or suggestions:</p>  
+                  <textarea id="comments" name="comments" rows="4" cols="50"></textarea>  
+              </section>  
+        
+              <!-- Conclusion Section -->  
+              <section id="conclusion">  
+                  <p>Thank you for completing our questionnaire! Your feedback is highly appreciated.</p>  
+                  <button type="submit">Submit</button>  
+              </section>  
+          </form>  
+
+
+  </div>
+</header>
+
+</body>
+</html>
