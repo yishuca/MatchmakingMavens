@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Matchmaking Maven</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/w3.css">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 1;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("../img/9fe826107812099.5faf8831d90b0.gif");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("../img/9fe826107812099.5faf8831d90b0.gif");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("../img/9fe826107812099.5faf8831d90b0.gif");
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Top Nav Bar -->
+<div class="w3-top">
+  <div class="w3-row w3-purple w3-card-4 w3-mobile">
+    <div class="w3-cell w3-mobile">
+      <a href="#about" class="w3-button w3-hide-small w3-hover-teal w3-large">ABOUT</a>
+    </div>
+    <div class="w3-cell">
+      <a href="#our team" class="w3-button w3-hide-small w3-hover-teal w3-large">blank</a>
+    </div>
+    <div class="w3-cell">
+      <a href="./PageServices.html" class="w3-button w3-hide-small w3-hover-teal w3-large">blank</a>
+    </div>
+    <div class="w3-cell">
+      <a href="./PagePortfolio.html" class="w3-button w3-hide-small w3-hover-teal w3-large">blank</a>
+    </div>
+    <div class="w3-cell">
+      <a href="#contact" class="w3-button w3-hide-small w3-hover-teal w3-large">blank</a>
+    </div>
+    <div class="w3-cell">
+      <a href="https://rapunzelsalonandspa.glossgenius.com/services" class="w3-button w3-hide-small w3-hover-teal w3-large">blank</a>
+    </div>
+  </div>
+</div>
+<!-- Top Nav Bar -->
+
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-card-4 w3-top w3-overlay w3-xlarge w3-animate-left w3-brown" style="display:none;z-index:2;width:50%;min-width:300px" id="mySidebar">
+<a href="javascript:void(0)" onclick="w3_close()" class="w3-hover-teal w3-ripple w3-right w3-xlarge w3-brown w3-button w3-hide-large" title="Close Menu">
+  <i class="fa fa-remove">x</i>
+</a>
+<div class="w3-container w3-bar-item" style="text-shadow:1px 2px 0 #000000"><b>Matchmaking Maven</b></div><br>
+<a href="#about" onclick="w3_close()" class="w3-ripple w3-hover-teal w3-bar-item w3-button">ABOUT</a><br>
+<a href="#our team" onclick="w3_close()" class="w3-ripple	 w3-hover-teal w3-bar-item w3-button">OUR TEAM</a><br>
+<a href="./PageServices.html" onclick="w3_close()" class="w3-ripple w3-hover-teal w3-bar-item w3-button">SERVICES</a><br>
+<a href="#portfolio" onclick="w3_close()" class="w3-ripple	 w3-hover-teal w3-bar-item w3-button">PORTFOLIO</a><br>
+<a href="#contact" onclick="w3_close()" class="w3-ripple	 w3-hover-teal w3-bar-item w3-button">CONTACT</a><br>
+<a href="https://rapunzelsalonandspa.glossgenius.com/services" onclick="w3_close()" class="w3-ripple w3-hover-teal w3-bar-item w3-button">BOOK</a>
+</nav>
+<!-- Sidebar (hidden by default) -->
+
+<!-- Top mini menu -->
+<div class="w3-top w3-left w3-hide-medium w3-hide-large">
+<div class="w3-xlarge" style="max-width:1200px;margin:auto">
+<div class="w3-container w3-black w3-text-white w3-xlarge w3-padding-16 w3-left pointer" onclick="w3_open()">&#9776;</div>
+</div>
+</div>
+<!-- Top mini menu -->
+
+<!-- Start Page content -->
+
+
+<header class="w3-center"> 
+  <div class="bgimg-1 w3-display-container">
+      <img class="w3-animate-top w3-display-topleft w3-margin-left" height="800" src="../img/MatchmakingHavenLogoShadow.png" alt="MatchmakingHavenLogo">
+
+      
+      <!-- The Modal -->
+      <div>
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button>
+      
+        <div id="id01" class="w3-modal">
+          <div class="w3-animate-zoom">
+            <div>
+
+              <div>
+                <iframe class="w3-card-4 w3-round-xlarge" src="https://docs.google.com/forms/d/e/1FAIpQLSdCcQs35RCiUbOEgUxNIPLqH7AQuVFwp3tGJV0XvaStnLhZng/viewform?embedded=true" width="500" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xxlarge w3-purple w3-display-topright">&times;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br><br>
+    </header>
+  </div>
+
+
+
+</body>
+</html>
