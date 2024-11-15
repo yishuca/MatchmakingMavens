@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Matchmaking Maven</title>
+    <title>Matchmaking Maven</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/w3.css">
@@ -9,7 +9,7 @@
 <style>
   .pointer {cursor: pointer;}
 body, html {
-  height: 100%;
+  height: 80%;
   margin: 0;
   font: 400 15px/1.8 "Lato", sans-serif;
   color: #777;
@@ -18,108 +18,159 @@ body, html {
 .bgimg-1, .bgimg-2, .bgimg-3 {
   position: relative;
   opacity: 1;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
 }
 .bgimg-1 {
-  background-image: url("../img/background.gif");
-  min-height: 100%;
+  background-image: url("../img/1112\(2\).gif");
+  min-height: 80%;
+
 }
 
 .bgimg-2 {
-  background-image: url("../img/background.gif");
-  min-height: 500px;
+  background-image: url("../img/Beachlove.gif");
+  height: 100px;
+
 }
 
 .bgimg-3 {
-  background-image: url("../img/9fe826107812099.5faf8831d90b0.gif");
+  background-image: url("../img/1112\(2\).gif");
   min-height: 400px;
 }
 
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
 
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
 
+h3 {
+  letter-spacing: 5px;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
 
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    position: relative;
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
 </style>
 </head>
 <body>
 
     <!-- Top Nav Bar -->
-<div class="w3-top">
-    <div class="w3-row w3-bottombar w3-topbar w3-border-black w3-purple w3-card-4 w3-mobile">
-      <div class="w3-cell w3-mobile">
-        <a href="#about" class="w3-button w3-hide-small w3-hover-teal w3-large"></a>
+    <div class="w3-top">
+      <div class="w3-row w3-bottombar w3-topbar w3-border-black w3-card-4 w3-mobile w3-light-grey">
+        <div class="w3-cell w3-mobile">
+          <a href="#about" class="w3-button w3-hide-small w3-large">Welcome!</a>
+        </div>
+        <div class="w3-cell">
       </div>
-      <div class="w3-cell">
     </div>
-  </div>
-  <!-- Top Nav Bar -->
+    </div>
 
-  <!-- Sidebar (hidden by default) -->
-<nav class="w3-sidebar w3-card-4 w3-top w3-overlay w3-xlarge w3-animate-left" style="display:none;z-index:2;width:50%;min-width:300px" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()" class="w3-hover-red w3-ripple w3-right w3-xlarge w3-button w3-hide-large" title="Close Menu">
-      <i class="fa fa-remove">x</i>
-    </a><img class="w3-animate-top w3-mobile w3-teal w3-card-4 w3-bottombar w3-topbar w3-border-black" style="width: 50%;" src="../img/Logo.png" alt="MatchmakingHavenLogo"><br>
-    <a href="#about" onclick="w3_close()" class="w3-ripple w3-hover-teal w3-bar-item w3-button w3-animate-bottom">Coming soon</a><br>
-    </nav>
+    <!-- Top Nav Bar -->
+  
     <!-- Sidebar (hidden by default) -->
-    
-    <!-- Top mini menu -->
-    <div class="w3-top w3-left w3-hide-medium w3-hide-large">
-    <div class="w3-xlarge" style="max-width:1200px;margin:auto">
-    <div class="w3-container w3-ripple w3-xxlarge w3-text-white w3-xlarge w3-padding-16 w3-left pointer" onclick="w3_open()">&#9776;</div>
-    </div>
-    </div>
-    <!-- Top mini menu -->
-
-<!-- Start Page content -->
-<header class="w3-center">
-  <div class="bgimg-1"><br><br><br><br>
-      <img class="w3-animate-top w3-mobile" style="width: 50%;" src="../img/Logo.png" alt="MatchmakingHavenLogo">
-
-      <br><br><br><br>
+  <nav class="w3-sidebar w3-card-4 w3-top w3-overlay w3-xlarge w3-animate-left" style="display:none;z-index:2;width:50%;min-width:300px" id="mySidebar">
+      <a href="javascript:void(0)" onclick="w3_close()" class="w3-hover-red w3-ripple w3-right w3-xlarge w3-button w3-hide-large" title="Close Menu">
+        <i class="fa fa-remove">x</i>
+      </a><img class="w3-animate-top w3-mobile w3-light-grey w3-card-4 w3-bottombar w3-topbar w3-border-black" style="width: 50%;" src="../img/Logo.png" alt="MatchmakingHavenLogo"><br>
+      <a href="#about" onclick="w3_close()" class="w3-ripple w3-hover-light-grey w3-bar-item w3-button w3-animate-top">Coming soon</a><br>
+      </nav>
+      <!-- Sidebar (hidden by default) -->
       
+      <!-- Top mini menu -->
+      <div class="w3-top w3-left w3-hide-medium w3-hide-large">
+      <div class="w3-xlarge" style="max-width:1200px;margin:auto">
+      <div class="w3-container w3-ripple w3-xxlarge w3-text-light-grey w3-xlarge w3-padding-16 w3-left pointer" onclick="w3_open()">&#9776;</div>
+      </div>
+      </div>
+      <!-- Top mini menu -->
+
+
+<!-- Panel 1 -->
+<div class="bgimg-1 w3-center"><br><br><br><br>
+  <img class="w3-animate-top w3-mobile" style="width: 50%;" src="../img/Logo.png" alt="MatchmakingHavenLogo">
+</div>
+<div class="w3-light-grey w3-topbar w3-bottombar w3-border-black"><br>
+  <div class="w3-xlarge w3-center w3-text-black">Take the Pre-Matchmaking Questionnaire!</div>
       <!-- The Modal -->
-      <div><br>
-        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black w3-hover-purple w3-round-xxlarge w3-ripple">Click to fill out questionnaire!</button>
+      <div class="w3-center"><br>
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black w3-hover-blue w3-round-xxlarge w3-ripple">Click to fill out questionnaire!</button>
         <div id="id01" class="w3-modal">
-          <div class="w3-animate-opacity">
-            <div>
-              <div><br>
-                <iframe class="w3-card-4 w3-white w3-round-xlarge w3-mobile" src="https://docs.google.com/forms/d/e/1FAIpQLSdCcQs35RCiUbOEgUxNIPLqH7AQuVFwp3tGJV0XvaStnLhZng/viewform?embedded=true" width="700" height="455" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-ripple w3-xlarge w3-round w3-purple w3-display-topright">Close X</span>
-              </div>
-            </div>
+          <div class="w3-animate-opacity"><br>
+                <iframe class="w3-card-4 w3-light-grey w3-round-xlarge w3-mobile" src="https://docs.google.com/forms/d/e/1FAIpQLSdCcQs35RCiUbOEgUxNIPLqH7AQuVFwp3tGJV0XvaStnLhZng/viewform?embedded=true" width="700" height="455" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-ripple w3-xlarge w3-round w3-light-grey w3-display-topright">Close X</span>
           </div>
-        </div>
+        </div><br><br></div>
       </div>
       <!-- The Modal -->
 
+<!-- Panel 1 -->
+
+
+<div>
+  <img src="../img/set.png" alt="couple sunset" style="width: 100%;">
+  </div>
+
+
+
+<!-- Panel 2 -->
+<div class="w3-center"></div>
+<div class="w3-light-grey w3-bottombar w3-topbar w3-border-black"><br>
+  <div class="w3-xlarge w3-center w3-text-black">Take the "Pre In Person Interview Questionnaire!"</div>
       <!-- The Modal -->
-      <div><br>
-        <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-black w3-hover-purple w3-round-xxlarge w3-ripple">Pre In Person Interview Questionnaire</button>
+      <div class="w3-center"><br>
+        <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-black w3-hover-blue w3-round-xxlarge w3-ripple">Click to fill out questionnaire!</button>
         <div id="id02" class="w3-modal">
-          <div class="w3-animate-opacity">
-            <div>
-              <div><br>
-                <iframe class="w3-card-4 w3-white w3-round-xlarge w3-mobile" src="https://docs.google.com/forms/d/e/1FAIpQLSfXx0JXdyX2ZSkzgdg5z5jOSVDj7ZV4YU_jBJiOYaw2i9czuA/viewform?embedded=true
-                " width="700" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-ripple w3-xlarge w3-round w3-purple w3-display-topright">Close X</span>
-              </div>
-            </div>
+          <div class="w3-animate-opacity"><br>
+                <iframe class="w3-card-4 w3-light-grey w3-round-xlarge w3-mobile" src="https://docs.google.com/forms/d/e/1FAIpQLSfXx0JXdyX2ZSkzgdg5z5jOSVDj7ZV4YU_jBJiOYaw2i9czuA/viewform?embedded=true" width="700" height="455" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-ripple w3-xlarge w3-round w3-light-grey w3-display-topright">Close X</span>
           </div>
-        </div>
+        </div><br><br>
+      </div>
       </div>
       <!-- The Modal -->
-      
-    </div>
-</header>
 
-<div class="bgimg-2"></div>
+<!-- Panel 2 -->
+
+<div>
+  <img src="../img/pexels-photo-14826452.jpg" alt="couple sunset" style="width: 100%;">
+  </div>
 
 
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-center w3-text-light-grey w3-card-4 w3-black w3-small">
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <a href="https://www.google.com/search?q=Yishuca+Designs&stick=H4sIAAAAAAAA_-NgU1IxqDAzMU82NEk2MkqzNDBIsrQyqEhLS7OwTDNPMrAwMjY1NEpexMofmVmcUZqcqOCSWpyZnlcMAI7WkV06AAAA&hl=en&mat=CcyCjVrczKUyElcBqiIDwuEnSkjtWn-T1yuTLkOZ0M76OHjKJvnvWiayBsnERJkKIrH5uH2yn5t0WsQl3sSypx1eetzXV58m4pBoi56C9U0JjRhXH8Z2uWJ_TesmeIFxW6A&authuser=1">Powered by Yishuca Designs</a>
+</footer>
+<!-- Footer -->
 
 <script>
   // Get the Sidebar
