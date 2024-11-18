@@ -362,6 +362,7 @@
                 transform: translateY(0);
             }
         }
+
   </style>
 </head>
 <body>
@@ -510,5 +511,23 @@
 
     // Initial trigger for elements in viewport
     revealOnScroll();
+  
+
+  // Function to show the sign-in form
+  function showSignin() {
+      document.getElementById('signinForm').style.display = 'none';
+      document.getElementById('createAccountForm').style.display = 'block';
+  }
+
+  // Function to show the create Account form
+  function showCreateAccount() {
+      document.getElementById('createAccountForm').style.display = 'none';
+      document.getElementById('signinForm').style.display = 'block';
+  }
+
+  // By default show the Sign-In form
+  showSignin();
+</script>
+
 </body>
 </html>
