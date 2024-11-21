@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../css/w3.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="../img/android-chrome-192x192.png" type="image/x-icon">
 
   <style>
     .pointer {cursor: pointer;}
@@ -42,8 +43,8 @@
       font-size: 4em;
       margin-bottom: 20px;
       opacity: 0;
-      animation: slideUp 3s forwards;
-      animation-delay: 0.8s;
+      animation: slideUp 2.5s forwards;
+      animation-delay: 0.5s;
       color: #e0e0e0;
     }
 
@@ -52,7 +53,7 @@
       margin-bottom: 500px;
       opacity: 0;
       animation: slideUp 2s forwards;
-      animation-delay: 2s;
+      animation-delay: 1.5s;
       color: #ccc;
       padding: 0px 20px;
     }
@@ -62,7 +63,7 @@
       margin-bottom: 100;
       opacity: 0;
       animation: slideUp 2s forwards;
-      animation-delay: 4s;
+      animation-delay: 3s;
       color: #ccc;
     }
 
@@ -377,45 +378,46 @@
   <!-- Sidebar -->
   <div id="sidebar" class="sidebar w3-card-4"><br>
     <a href="#" class="w3-animate-opacity" onclick="closeSidebar()">Home</a>
-    <a href="#services" onclick="closeSidebar()">Our Services</a>
+    <a href="#letsgetstarted" onclick="closeSidebar()">Let's get started</a>
+    <a href="#packages" onclick="closeSidebar()">Packages</a>
+    <a href="#events" onclick="closeSidebar()">Events</a>
     <a href="#contact" onclick="closeSidebar()">Contact</a>
   </div>
 
   <!-- Hero Section -->
   <section class="hero">
     <div>
-        <img class="w3-border-black w3-topbar w3-rightbar w3-leftbar w3-bottombar w3-animate-top w3-mobile" style="width: 80%;" src="../img/logo.gif" alt="MatchmakingHavenLogo">
+        <img class="w3-border-black w3-card-4 w3-topbar w3-rightbar w3-leftbar w3-bottombar w3-animate-top w3-mobile" style="width: 80%;" src="../img/logo.gif" alt="MatchmakingHavenLogo">
       <p class="w3-margin-bottom w3-xxlarge">Join us today and meet your next match!</p>
       <s><br><br>
-      <button class="button-primary" onclick="scrollToSection('services')">Explore our services</button>
+      <button class="button-primary" onclick="scrollToSection('letsgetstarted')">Explore our services</button>
       </s>
     </div>
   </section>
 
-   <!-- Services Section -->
-   <section id="services" class="services">
+   <!-- Let's get started Section -->
+    <br id="letsgetstarted"><br>
+   <div id="letsgetstarted" class="w3-display-container w3-center">
+    <h3><b class="w3-text-purple w3-xxlarge w3-center reveal w3-padding-64" style="padding: 10px 10px;">Let's get started</b></h3>
+    <h4 class="w3-text-purple w3-xlarge w3-center reveal" style="padding: 10px 10px;">Please fill out these questionnaires</h4>
+     </div>
+   <section class="services">
     <div class="service-card reveal">
       <h3><b>Pre-Matchmaking Questionnaire</b></h3>
       <br><br>
       <h4>This will help us briefly understand a little bit about you and what you're looking for.</h4>
-    <br><br><br>
+    <br><br><br><br>
       <div>
-      <a href="https://forms.gle/948ovG8C2XkDLeMa7" style="color: #ff6969;" class="w3-button reveal w3-bar w3-purple w3-large w3-round">Take now</a>
+      <a href="https://forms.gle/948ovG8C2XkDLeMa7" style="color: #ff6969;" class="w3-button button-primary reveal w3-bar w3-purple w3-large w3-round">Take now</a>
     </div><br>
     </div>
     <div class="service-card reveal">
       <h3><b>Pre-In Person Interview Questionnaire</b></h3>
       <h4>This provides us insights into your personality, relationship history, and what you seek in a partner, allowing us to match you with individuals who align with your values and expectations.</h4>
-      <a href="https://forms.gle/RjNHVEofDGDfPq3E8" style="color: #ff6969;" class="w3-button reveal w3-bar w3-purple w3-large w3-round">Take now</a>
-    </div>
-    <div class="service-card reveal">
-        <h3><b>Exclusive Events</b></h3>
-        <h4>Our Exclusive Events offer a unique opportunity to meet like-minded individuals in a fun, social atmosphere. From singles mixers to themed gatherings, these events allow you to connect face-to-face and form genuine relationships.</h4>
-        <br>
-        <a class="w3-button reveal w3-bar w3-dark-grey w3-large w3-round">Coming soon!</a>
+      <a href="https://forms.gle/RjNHVEofDGDfPq3E8" style="color: #ff6969;" class="w3-button button-primary reveal w3-bar w3-purple w3-large w3-round">Take now</a>
     </div>
   </section>
-  
+
   <section style="position: relative; width: 100%;">
     <!-- Image -->
     <img class="w3-mobile" style="width: 100%;" src="../img/set.png" alt="MatchmakingHavenLogo">
@@ -432,26 +434,29 @@
 
   <!-- Contact Section -->
   <section id="contact" class="w3-container w3-padding-64 w3-dark-grey" style="text-align:center;">
-    <div class="w3-xlarge reveal" style="color:#FA5252;">
+    <div class="w3-xxlarge reveal" style="color:#ff6969;">
         <b>Contact Us</b>
     </div>
-    <div class="reveal">
+    <div class="reveal w3-large">
         <p>Have questions or need help? Reach out to us!</p>
     </div>
     <div class="reveal">
-        <p class="reveal w3-hover-text-blue w3-large">Brooklyn
+        <p class="reveal w3-large">Brooklyn
         <a class="reveal w3-hover-text-blue">(208) 960-5546</a><br>
         </p>
     </div>
     <div class="reveal">
-      <p class="reveal w3-hover-text-blue w3-large">Tawnia
+      <p class="reveal w3-large">Tawnia
       <a class="reveal w3-hover-text-blue">(208) 996-0490</a><br>
       </p>
   </div>
   <div class="reveal">
-    <a href="https://www.facebook.com/people/Matchmaking-Maven/61568559238387/?mibextid=ZbWKwL" class="reveal w3-hover-text-blue">
+    <a class="reveal w3-hover-text-blue w3-large"href="thematchmakingmavens@gmail.com"><p>thematchmakingmavens@gmail.com</p></a>
+</div>
+  <div class="reveal">
+    <a href="https://www.facebook.com/people/Matchmaking-Maven/61568559238387/?mibextid=ZbWKwL" class="reveal">
     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 64 64"
-    style="fill:#FA5252;">
+    style="fill:#ff6969;">
     <path d="M32,6C17.642,6,6,17.642,6,32c0,13.035,9.603,23.799,22.113,25.679V38.89H21.68v-6.834h6.433v-4.548	c0-7.529,3.668-10.833,9.926-10.833c2.996,0,4.583,0.223,5.332,0.323v5.965h-4.268c-2.656,0-3.584,2.52-3.584,5.358v3.735h7.785	l-1.055,6.834h-6.73v18.843C48.209,56.013,58,45.163,58,32C58,17.642,46.359,6,32,6z"></path>
     </svg>
   </a>
@@ -474,10 +479,9 @@
 
   <!-- Footer -->
   <footer>
-    <p>
-    <a href="https://www.google.com/search?q=Yishuca+Designs&stick=H4sIAAAAAAAA_-NgU1IxqDAzMU82NEk2MkqzNfirestoreIsrQyqEhLS7OwTDNPMrAwMjY1NEpexMofmVmcUZqcqOCSWpyZnlcMAI7WkV06AAAA&hl=en&mat=CcyCjVrczKUyElcBqiIDwuEnSkjtWn-T1yuTLkOZ0M76OHjKJvnvWiayBsnERJkKIrH5uH2yn5t0WsQl3sSypx1eetzXV58m4pBoi56C9U0JjRhXH8Z2uWJ_TesmeIFxW6A&authuser=1" class="pointer w3-hover-text-white" style="color: rgba(115, 115, 115, 0.8)">&copy; 2024 Powered by Yishuca Designs
-    </a>
-    </p>
+    <p class="w3-hover-text-white w3-small" style="color: rgba(115, 115, 115, 0.8)">&copy; 2024 Powered by
+    <a href="https://www.google.com/search?q=Yishuca+Designs&stick=H4sIAAAAAAAA_-NgU1IxqDAzMU82NEk2MkqzNfirestoreIsrQyqEhLS7OwTDNPMrAwMjY1NEpexMofmVmcUZqcqOCSWpyZnlcMAI7WkV06AAAA&hl=en&mat=CcyCjVrczKUyElcBqiIDwuEnSkjtWn-T1yuTLkOZ0M76OHjKJvnvWiayBsnERJkKIrH5uH2yn5t0WsQl3sSypx1eetzXV58m4pBoi56C9U0JjRhXH8Z2uWJ_TesmeIFxW6A&authuser=1" class="pointer w3-hover-text-white w3-small" style="color: rgba(115, 115, 115, 0.8)">Yishuca Designs
+</a></p>
   </footer>
 
   <!-- JavaScript -->
