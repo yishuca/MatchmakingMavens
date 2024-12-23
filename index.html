@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Matchmaking Service - Find your perfect match with ease.">
+  <meta name="description" content="Matchmaking Mavens">
   <meta name="author" content="Yishuca Designs">
   <title>Matchmaking Mavens</title>
 
@@ -14,7 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Gochi+Hand&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Reenie+Beanie&family=Shadows+Into+Light&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  <link rel="icon" href="../img/android-chrome-192x192.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Gochi+Hand&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Reenie+Beanie&family=Shadows+Into+Light&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="icon" href="../img/android-chrome-192x192.png" type="image/x-icon">
 
   <style>
     .pointer {cursor: pointer;}
@@ -23,7 +24,7 @@
       margin: 0;
       padding: 0;
       overflow-x: hidden;
-      background-color: #d5d5d5;
+      background-color: #1d1d1d;
       color: #e0e0e0;
       scroll-behavior: smooth;
     }
@@ -68,7 +69,7 @@
       font-size: 4em;
       margin-bottom: 20px;
       opacity: 0;
-      animation: slideUp 2.5s forwards;
+      animation: slideDown 2.5s forwards;
       animation-delay: 0.5s;
       color: #e0e0e0;
     }
@@ -109,6 +110,11 @@
 
     @keyframes slideUp {
       0% { transform: translateY(500px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      0% { transform: translateY(-500px); opacity: 0; }
       100% { transform: translateY(0); opacity: 1; }
     }
 
@@ -223,7 +229,7 @@
       border-radius: 10px;
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.8); /* Glowing effect */
       transition:  1s ease;      
-      max-width: 350px;
+      max-width: 650px;
       width: 100%;
       text-align: center;
       color: #fff;
@@ -235,7 +241,7 @@
     .service-card:hover {
       transform: translateY(-10px); /* Smooth upward movement */
       scale: 1.0; /* Slightly scale up */
-      box-shadow: 0 12px 30px #ffffff; /* Stronger shadow */
+      box-shadow: 12px 12px 0px #008080; /* Stronger shadow */
       filter: brightness(1); /* Glowing effect */
       background-color: 3e3e3e;
       transition:  1s ease;
@@ -460,22 +466,133 @@
 
     /* Style the accordion content (hidden by default) */
     .accordion-content {
-      background-color: #d5d5d5;
+      background-color: #1d1d1d;
       height: 0; /* Initially collapsed height */
       opacity: 0; /* Initially hidden */
       overflow: hidden; /* Hide content */
       transition: height 2s ease-out, opacity 1s ease-out; /* Transition time for height and opacity */
     }
   </style>
+
+<style>
+  /* Styling for checkboxes */
+  .checkbox {
+    width: 15px;  /* Bigger size for checkbox */
+    height: 15px; /* Bigger size for checkbox */
+    -webkit-appearance: none; /* Remove default appearance */
+    appearance: none;
+    border-radius: 2px; /* Rounded corners for the checkbox */
+    background-color: white; /* White background */
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .checkbox:checked {
+    background-color: #008080; /* Background color when checked */
+    border-color: #008080; /* Border color when checked */
+  }
+
+    /* Add checkmark when checkbox is checked */
+    .checkbox:checked::after {
+    content: ''; /* Unicode checkmark */
+    position: absolute;
+    top: 50%; /* Vertically center */
+    left: 50%; /* Horizontally center */
+    transform: translate(-50%, -50%); /* Offset by 50% to fully center */
+    color: white; /* Checkmark color */
+    font-size: 14px; /* Size of the checkmark */
+  }
+
+/* Animation for smooth transformation */
+#formContainer {
+  position: relative;
+  transition: opacity 0.6s ease-in-out;
+}
+
+#thankYouMessage {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  top: 50%;   /* Vertically center */
+  left: 50%;  /* Horizontally center */
+  transform: translate(-50%, -50%);  /* Adjust positioning to truly center */
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  display: none; /* Initially hidden */
+}
+
+#thankYouMessage.show {
+  opacity: 1;
+  display: block; /* Make the thank you message visible */
+}
+</style>
+
+<style>
+  /* Basic styles for the pop-up */
+  #newsletterPopup {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #3e3e3e;
+      border: 1px solid #008080;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 300px;
+      max-width: 90%;
+      visibility: hidden;  /* Start off hidden */
+      opacity: 0;  /* Fully transparent */
+      transform: translateY(20px); /* Start position for sliding */
+      transition: visibility 0s 0.5s, opacity 0.5s ease, transform 0.5s ease; /* Animation for fade-in and slide-up */
+      z-index: 9999;
+  }
+
+  #newsletterPopup.show {
+      visibility: visible; /* Make visible */
+      opacity: 1;  /* Make fully opaque */
+      transform: translateY(0); /* Final position */
+      transition: visibility 0s, opacity 0.5s ease, transform 0.5s ease; /* Immediate visibility change */
+  }
+
+  #newsletterPopup h2 {
+      margin-top: 0;
+  }
+
+  #newsletterPopup p {
+      margin: 10px 0;
+  }
+
+  #popupCloseBtn {
+      background-color: rgb(95, 95, 95);
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 14px;
+  }
+
+  #popupSubscribeBtn {
+      background-color: #008080;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+  }
+</style>
 </head>
 <body>
     <!-- Navbar -->
     <div class="w3-bar w3-top w3-xlarge w3-navbar w3-hide-small w3-card-4">
-      <a href="./index.html" class="w3-bar-item w3-button w3-mobile">Home</a>
-      <a href="./index.html#letsgetstarted" class="w3-bar-item w3-button w3-mobile">Let's get started
+      <a href="./index.html" class="w3-bar-item w3-button w3-ripple w3-mobile">Home</a>
+      <a href="./index.html#letsgetstarted" class="w3-bar-item w3-ripple w3-button w3-mobile">Let's get started
       </a>
       <a href="./volunteer.html" class="w3-bar-item w3-button w3-mobile">Volunteer</a>
-      <a href="./index.html#contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
+      <a href="./index.html#contact" class="w3-bar-item w3-button w3-ripple w3-mobile">Contact</a>
   </div>
 
   <!-- Hamburger Menu -->
@@ -505,9 +622,41 @@
     </div>
   </section>
 
+    <!-- Sticky Newsletter Pop-up -->
+    <div id="newsletterPopup">
+      <button class="w3-ripple" id="popupCloseBtn" style="z-index: 10000;">X</button>
+      <p class="w3-text-teal w3-xxlarge"><b>Stay Connected!</b></p>
+      <p class="w3-text-teal w3-medium"><b>Select one or more below</b></p>
+      <div class="w3-center reveal" id="formContainer"></div><br>
+      <div class="">
+        <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfIyP7ni0YMWQEQg57LElcxweM7yCL15R0LXaZpOKi-HeRubw/formResponse" onsubmit="handleSubmit(event)">
+          <!-- Checkbox 1 -->
+          <input type="checkbox" id="checkbox1" class="checkbox reveal" />
+          <label class="w3-large w3-text-white pointer reveal" for="checkbox1">Keep me up to date on singles events</label><br><br>
+          <!-- Checkbox 2 -->
+          <input type="checkbox" id="checkbox2" class="checkbox reveal" />
+          <label class="w3-large w3-text-white pointer reveal" for="checkbox2">Contact me about your matchmaking services</label><br><br>
+          <!-- Checkbox 3 -->
+          <input type="checkbox" id="checkbox3" class="checkbox reveal" />
+          <label class="w3-large w3-text-white pointer reveal" for="checkbox3">Reach out to me to fill out a free online profile to see if I'm fit for a match</label><br><br>
+          <!-- Phone or email input -->
+          <input class="w3-large reveal w3-center center" type="text" id="phoneOrEmail" name="entry.911869334" placeholder="phone or email" required><br><br>
+          <!-- Hidden inputs for checkboxes -->
+          <input type="hidden" id="hidden1" name="entry.728608735">
+          <input type="hidden" id="hidden2" name="entry.647886455">
+          <input type="hidden" id="hidden3" name="entry.302090966">
+          <button style="color: #008080;" class="w3-button button-primary reveal w3-bar w3-purple w3-xlarge w3-round w3-ripple" type="submit">Submit</button>
+        </form>
+      </div>
+      <div id="thankYouMessage" class="w3-dark-grey center w3-round-xlarge" style="text-align: center; width: 290px; height: 600px;">
+        <p class="w3-text-purple w3-xlarge" style="padding: 10px 10px;   position: absolute; top: 45%; -ms-transform: translateY(-50%); transform: translateY(-50%)">Thank you! You'll hear from us soon!</p>
+      <br><br><br><br>
+      </div>
+    </div>
+
    <!-- Introduction --> <br id="letsgetstarted"><br><br>
-    <div class="w3-center center reveal accordion">
-  <button class="button-primary w3-text-black w3-xlarge accordion w3-hover-purple" style="max-width: 275px;">Why Matchmaking?<p class="w3-medium">(Click me)</p></button>
+    <div class="w3-center center reveal accordion" style="max-width: 255px;">
+  <button class="w3-ripple button-primary w3-text-black w3-xlarge accordion w3-hover-purple">Why Matchmaking?<p class="w3-medium">(Click me)</p></button>
   </div>
   <div class="accordion-content">
    <div id="letsgetstarted" class="w3-display-container w3-center" style="padding: 15px 15px;">
@@ -534,14 +683,14 @@
       <br>
       <p class="reveal w3-text-purple w3-xlarge center" style="max-width: 600px;">Are you ready to take the next step toward love? Let us be your matchmakers.</p>
       <br>
-      <button class="close-btn button-primary w3-text-black w3-medium accordion w3-hover-purple">Close</button>
+      <button class="close-btn button-primary w3-text-black w3-medium accordion w3-hover-purple w3-ripple">Close</button>
     </p>
    </div>
   </div>
 
    <!-- Let's get started Section -->
    <br><br>
-   <div class="w3-display-container w3-center">
+   <div class="w3-display-container w3-center reveal">
     <div class="w3-center reveal">
       <p><b class="w3-text-purple w3-xxlarge w3-padding-64" style="padding: 10px 10px;">Let's get started</b></p>
     </div>
@@ -550,12 +699,13 @@
     </div>
    <section class="services">
     <div class="service-card reveal">
-      <p class="w3-xlarge w3-text-purple"><b>Let us get to know you.</b></p>
+      <p class="w3-xxlarge w3-text-purple"><b>Let us get to know you.</b></p>
       <p class="w3-large">This provides us insights into your personality, relationship history, and what you seek in a partner, allowing us to match you with individuals who align with your values and expectations.</p>
-      <a href="https://forms.gle/RjNHVEofDGDfPq3E8" style="color: #008080;" class="w3-button button-primary reveal w3-bar w3-purple w3-xlarge w3-round">Take now</a>
+      <br>
+      <a href="https://forms.gle/RjNHVEofDGDfPq3E8" style="color: #008080;" class="w3-ripple w3-button button-primary reveal w3-bar w3-purple w3-xlarge w3-round">Take now</a>
     </div>
   </section>
-
+  </div>
 
    <!-- Volunteer Section -->
    <br>
@@ -568,7 +718,7 @@
         <p><b class="w3-text-purple w3-xxlarge">Volunteer</b></p>
         <p  class="w3-large">Your support can directly impact someone's journey to finding their perfect match. <br> <br>Fill out our volunteer application today and be part of something special!</p>
         <br>
-        <a href="./volunteer.html" class="button-primary w3-button reveal w3-bar w3-purple w3-large w3-round">See how you can help</a>
+        <a href="./volunteer.html" class="button-primary w3-button reveal w3-bar w3-purple w3-large w3-round w3-ripple">See how you can help</a>
     </div>
   </section><br>
 
@@ -587,25 +737,25 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="w3-container w3-padding-64 w3-dark-grey" style="text-align:center;">
+  <section id="contact" class="w3-container w3-padding-64" style="text-align:center; color: #1d1d1d;">
     <div class="w3-xxlarge reveal" style="color:#008080;">
         <b>Contact Us</b>
     </div>
-    <div class="reveal w3-large">
+    <div class="reveal w3-large w3-text-white">
         <p>Have questions or need help? Reach out to us!</p>
     </div>
     <div class="reveal">
-        <p class="reveal w3-large">Brooklyn
-        <a class="reveal w3-hover-text-blue">(208) 960-5546</a><br>
+        <p class="reveal w3-large w3-text-white">Brooklyn
+        <a href="tel:208-960-5546" class="reveal w3-hover-text-blue w3-text-white">(208) 960-5546</a><br>
         </p>
     </div>
     <div class="reveal">
-      <p class="reveal w3-large">Tawnia
-      <a class="reveal w3-hover-text-blue">(208) 996-0490</a><br>
+      <p class="reveal w3-large w3-text-white">Tawnia
+      <a href="tel:208-996-0490" class="reveal w3-hover-text-blue w3-text-white">(208) 996-0490</a><br>
       </p>
   </div>
   <div class="reveal">
-    <a class="reveal w3-hover-text-blue w3-medium" href="mailto:thematchmakingmavens@gmail.com"><p>thematchmakingmavens@gmail.com</p></a>
+    <a class="reveal w3-hover-text-blue w3-medium w3-text-white" href="mailto:thematchmakingmavens@gmail.com"><p>thematchmakingmavens@gmail.com</p></a>
 </div>
   <div class="reveal">
     <a href="https://www.facebook.com/people/Matchmaking-Maven/61568559238387/?mibextid=ZbWKwL" class="reveal">
@@ -873,5 +1023,109 @@
       }, 200);  // Add slight delay to ensure collapsing happens first
     });
   </script>
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    // Get the value from the "phone or email" field
+    var phoneOrEmail = document.getElementById("phoneOrEmail").value;
+
+    // If checkbox 1 is checked, copy the value to hidden input for checkbox 1
+    if (document.getElementById("checkbox1").checked) {
+      document.getElementById("hidden1").value = phoneOrEmail;
+    }
+
+    // If checkbox 2 is checked, copy the value to hidden input for checkbox 2
+    if (document.getElementById("checkbox2").checked) {
+      document.getElementById("hidden2").value = phoneOrEmail;
+    }
+
+    // If checkbox 3 is checked, copy the value to hidden input for checkbox 3
+    if (document.getElementById("checkbox3").checked) {
+      document.getElementById("hidden3").value = phoneOrEmail;
+    }
+  });
+</script>
+
+<script>
+  // Function to handle form submission asynchronously
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission (which causes the page reload)
+
+    var form = this;
+    var formData = new FormData(form);
+
+    // Create a new AJAX request
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', form.action, true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+      }
+    };
+    xhr.send(formData); // Send the form data
+  });
+
+// Function to handle form submission and animation
+function handleSubmit(event) {
+  event.preventDefault(); // Prevents form from actually submitting to the server
+
+  // Hide the form with animation
+  const formContainer = document.getElementById('formContainer');
+  formContainer.style.opacity = 0;
+
+  // Show the "Thank You" message after a delay
+  const thankYouMessage = document.getElementById('thankYouMessage');
+  setTimeout(function () {
+    thankYouMessage.style.display = 'block';
+    thankYouMessage.classList.add('show');
+  }, 500); // Delays the showing of the "Thank You" message by 0.5s
+}
+
+</script>
+
+<script>
+  // Define the scroll trigger position (e.g., 300px)
+  var scrollTriggerPoint = 500;
+  var popupShown = false; // To avoid showing the pop-up multiple times
+  
+  // Track scroll position
+  window.onscroll = function() {
+      var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+  
+      // Check if the user has scrolled past the trigger point and the pop-up hasn't been shown
+      if (scrollPosition >= scrollTriggerPoint && !popupShown) {
+          document.getElementById('newsletterPopup').classList.add('show');
+          popupShown = true; // Mark that the pop-up has been shown
+      }
+  }
+  
+  // Close the pop-up when clicking the close button
+  document.getElementById('popupCloseBtn').onclick = function() {
+      document.getElementById('newsletterPopup').classList.remove('show');
+  }
+  
+  // Handle subscription
+  document.getElementById('popupSubscribeBtn').onclick = function() {
+      var email = document.getElementById('emailInput').value;
+      
+      // Set a fixed delay for hiding the pop-up (in milliseconds)
+      var hideDelay = 2000; // Set this to whatever time you want (e.g., 5000ms = 5 seconds)
+
+      if (email) {
+          // First, do not hide the pop-up immediately
+          // After the delay, hide the pop-up with an animation
+          setTimeout(function() {
+              // Remove the 'show' class to hide the pop-up
+              document.getElementById('newsletterPopup').classList.remove('show');
+              
+              // Optionally, set visibility to 'hidden' for smoother effect after the delay
+              setTimeout(function() {
+                  document.getElementById('newsletterPopup').style.visibility = 'hidden';
+              }, 500); // A small timeout to ensure visibility is hidden after animation
+          }, hideDelay); // This is the delay after subscribing before disappearing
+      } else {
+          alert("Please enter a valid email address.");
+      }
+  }
+</script>
 </body>
 </html>
