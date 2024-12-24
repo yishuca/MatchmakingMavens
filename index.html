@@ -655,7 +655,7 @@
     </div>
 
    <!-- Introduction --> <br id="letsgetstarted"><br><br>
-    <div class="w3-center center reveal accordion" style="max-width: 255px;">
+    <div class="w3-center center reveal accordion" style="max-width: 320px;">
   <button class="w3-ripple button-primary w3-text-black w3-xlarge accordion w3-hover-purple">Why Matchmaking?<p class="w3-medium">(Click me)</p></button>
   </div>
   <div class="accordion-content">
@@ -718,7 +718,7 @@
         <p><b class="w3-text-purple w3-xxlarge">Volunteer</b></p>
         <p  class="w3-large">Your support can directly impact someone's journey to finding their perfect match. <br> <br>Fill out our volunteer application today and be part of something special!</p>
         <br>
-        <a href="./volunteer.html" class="button-primary w3-button reveal w3-bar w3-purple w3-large w3-round w3-ripple">See how you can help</a>
+        <a href="./volunteer.html" class="button-primary w3-button reveal w3-bar w3-purple w3-large w3-round w3-ripple" style="max-width: 250px;">See how you can help</a>
     </div>
   </section><br>
 
@@ -1083,6 +1083,11 @@ function handleSubmit(event) {
 </script>
 
 <script>
+// Check if the user has already filled out the form using localStorage
+/* if (localStorage.getItem('newsletterSubmitted') === 'true') {
+    document.getElementById('newsletterPopup').style.display = 'none'; // Hide the popup if already submitted
+} */
+
   // Define the scroll trigger position (e.g., 300px)
   var scrollTriggerPoint = 500;
   var popupShown = false; // To avoid showing the pop-up multiple times
