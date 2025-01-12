@@ -639,8 +639,10 @@
           <!-- Checkbox 3 -->
           <input type="checkbox" id="checkbox3" class="checkbox reveal" />
           <label class="w3-large w3-text-white pointer reveal" for="checkbox3">Reach out to me to fill out a free online profile to see if I'm fit for a match</label><br><br>
+          <!-- Name input -->
+          <input class="w3-medium reveal w3-center center" type="text" id="name" name="name" placeholder="Your name" required><br><br>
           <!-- Phone or email input -->
-          <input class="w3-medium reveal w3-center center" type="text" id="phoneOrEmail" name="entry.911869334" placeholder="Name + phone or email" required><br><br>
+          <input class="w3-medium reveal w3-center center" type="text" id="phoneOrEmail" name="entry.911869334" placeholder="Phone or email" required><br><br>
           <!-- Hidden inputs for checkboxes -->
           <input type="hidden" id="hidden1" name="entry.728608735">
           <input type="hidden" id="hidden2" name="entry.647886455">
@@ -648,7 +650,7 @@
           <button style="color: #008080;" class="w3-button button-primary reveal w3-bar w3-purple w3-xlarge w3-round w3-ripple" type="submit">Submit</button>
         </form>
       </div>
-      <div id="thankYouMessage" class="w3-dark-grey center w3-round-xlarge" style="text-align: center; width: 290px; height: 600px;">
+      <div id="thankYouMessage" class="w3-dark-grey center w3-round-xlarge" style="text-align: center; width: 290px; height: 670px;">
         <p class="w3-text-purple w3-xlarge" style="padding: 10px 10px;   position: absolute; top: 45%; -ms-transform: translateY(-50%); transform: translateY(-50%)">Thank you! You'll hear from us soon!</p>
       <br><br><br><br>
       </div>
@@ -1025,25 +1027,32 @@
   </script>
 
 <script>
-  document.getElementById("contactForm").addEventListener("submit", function(event) {
-    // Get the value from the "phone or email" field
-    var phoneOrEmail = document.getElementById("phoneOrEmail").value;
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  // Get the value from the "name" field
+  var name = document.getElementById("name").value;
 
-    // If checkbox 1 is checked, copy the value to hidden input for checkbox 1
-    if (document.getElementById("checkbox1").checked) {
-      document.getElementById("hidden1").value = phoneOrEmail;
-    }
+  // Get the value from the "phone or email" field
+  var phoneOrEmail = document.getElementById("phoneOrEmail").value;
 
-    // If checkbox 2 is checked, copy the value to hidden input for checkbox 2
-    if (document.getElementById("checkbox2").checked) {
-      document.getElementById("hidden2").value = phoneOrEmail;
-    }
+  // Combine name and phone/email into the phone/email field value
+  document.getElementById("phoneOrEmail").value = name + " " + phoneOrEmail;
 
-    // If checkbox 3 is checked, copy the value to hidden input for checkbox 3
-    if (document.getElementById("checkbox3").checked) {
-      document.getElementById("hidden3").value = phoneOrEmail;
-    }
-  });
+  // If checkbox 1 is checked, copy the value to hidden input for checkbox 1
+  if (document.getElementById("checkbox1").checked) {
+    document.getElementById("hidden1").value = name + " " + phoneOrEmail;
+  }
+
+  // If checkbox 2 is checked, copy the value to hidden input for checkbox 2
+  if (document.getElementById("checkbox2").checked) {
+    document.getElementById("hidden2").value = name + " " + phoneOrEmail;
+  }
+
+  // If checkbox 3 is checked, copy the value to hidden input for checkbox 3
+  if (document.getElementById("checkbox3").checked) {
+    document.getElementById("hidden3").value = name + " " + phoneOrEmail;
+  }
+});
+
 </script>
 
 <script>
